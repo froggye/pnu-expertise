@@ -33,7 +33,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
     font-family: "SF UI T", "Segoe UI", sans-serif !important;
     /*font-size: 32px;*/
-    color: #617A5B !important;
+    color: #37405B !important;
     font-weight: bold !important;
     margin: 0 0 16px 0;
 
@@ -41,10 +41,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+input, textarea, button {
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px !important;
+    margin-bottom: 8px !important;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+textarea {
+    width: 100%;
+    resize: none !important;
+}
+
+
 .anchor {
     display: block;
     position: relative;
-    top: -135px;
+    top: -114px;
     visibility: hidden;
 }
 
@@ -52,17 +70,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-img-bg {
     background-image: url("../img/bg-circle.png");
-    background-size: contain;
-    background-position: top -150px right 200px;
+    background-size: 700px;  /*40%*/;
+    background-position: top -150px right 10px;
     background-repeat: no-repeat;
 
 
     /*background-color: #37405B;*/
 }
 
+@media screen and (max-width: 780px) {
+    .header-img-bg {
+        background-position: top 80% right -300px;
+        /*background-size: 200%;*/
+    }
+}
+
 .header {
     background-image: linear-gradient(100deg, rgba(128, 128, 128, 0.05) 30%, transparent /*calc(80% + 2.5px)*/ 30%);
     padding-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .header-top {
@@ -193,17 +219,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .numbers-top h1 {
     font-size: 60px;
-    color: #37405B !important;
     margin-bottom: 0;
-}
-
-.numbers-top h4 {
-    /*font-weight: 500 !important;*/
-    color: #37405B !important;
-}
-
-.numbers-bottom h4 {
-    color: #37405B !important;
 }
 
 .numbers-bottom {
@@ -364,6 +380,10 @@ h1, h2, h3, h4, h5, h6 {
     /*height: 150px;*/
 }
 
+.circle-el-body h3 {
+    color: #617A5B !important;
+}
+
 .circle-el:nth-child(2n) .circle-el-body h3 {
     color: #37405B !important;
 }
@@ -478,27 +498,187 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
-.circle-el.hidden:nth-child(2)  {
-    transition-delay: 200ms;
+/*.circle-el.hidden:nth-child(2)  {*/
+/*    transition-delay: 200ms;*/
+/*}*/
+/*.circle-el.hidden:nth-child(3)  {*/
+/*    transition-delay: 400ms;*/
+/*}*/
+/*.circle-el.hidden:nth-child(4)  {*/
+/*    transition-delay: 600ms;*/
+/*}*/
+
+/*@media screen and (max-width: 1200px) {*/
+/*    .circle-el.hidden:nth-child(2)  {*/
+/*        transition-delay: 0ms;*/
+/*    }*/
+/*    .circle-el.hidden:nth-child(3)  {*/
+/*        transition-delay: 0ms;*/
+/*    }*/
+/*    .circle-el.hidden:nth-child(4)  {*/
+/*        transition-delay: 0ms;*/
+/*    }*/
+/*}*/
+
+
+/*============ ВИДЫ ЭКСПЕРТИЗ ==============*/
+
+.expertize-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.circle-el.hidden:nth-child(3)  {
-    transition-delay: 400ms;
+
+.expertize-container {
+    margin-top: 40px;
+    margin-bottom: 28px;
 }
-.circle-el.hidden:nth-child(4)  {
-    transition-delay: 600ms;
+
+/*@media screen and (max-width: 780px) {*/
+/*    .expertize-container {*/
+/*        margin-top: 40px;*/
+/*        margin-bottom: 40px;*/
+/*    }*/
+/*}*/
+
+.expertize-card-wrap {
+    margin: 20px -8px 0 -8px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.expertize-card-item {
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    border-radius: 20px;
+    margin: 12px 8px;
+    /*max-width: 312px;*/
+    /*width: 100%;*/
+    height: 180px;
+    flex: 1 0 22%;
+
+    background-size: cover;
+    overflow: hidden;
+
+}
+
+@media screen and (max-width: 780px) {
+    .expertize-card-item {
+        flex: 1 0 46%;
+
+    }
+}
+
+.expertize-card-item div {
+    background-image: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.6));
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.expertize-card-item:hover {
+    transform: scale(1.05);
+    transition: all 400ms;
+}
+
+.expertize-card-item p {
+    color: white;
+    font-weight: 500;
+    padding: 16px;
+    /*height: 100%;*/
+
+    display: inline-block;
+    align-self: flex-end;
+
+}
+
+
+/*======================= КОНТАКТЫ ======================*/
+
+
+.contact {
+    padding: 40px 0;
+    background-image: url("../img/svg/circle-dash.svg");
+    background-size: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1200px) {
-    .circle-el.hidden:nth-child(2)  {
-        transition-delay: 0ms;
-    }
-    .circle-el.hidden:nth-child(3)  {
-        transition-delay: 0ms;
-    }
-    .circle-el.hidden:nth-child(4)  {
-        transition-delay: 0ms;
+    .contact {
+        background-size: 40%;
     }
 }
 
+@media screen and (max-width: 780px) {
+    .contact {
+        background-size: 80%;
+    }
+}
 
-/*============
+.contact-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 24px 0;
+    text-align: center;
+}
+
+.contact-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.contact-title h3 {
+    color: #617A5B !important;
+}
+
+.contact-fields {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+.contact-field-1 {
+    padding-right: 12px !important;
+}
+
+.contact-field-2 {
+    padding-left: 12px !important;
+}
+
+@media screen and (max-width: 780px) {
+    .contact-field-1, .contact-field-2 {
+        padding: 0 !important;
+    }
+}
+
+.contact-text {
+    display: flex;
+    height: 100%;
+}
+
+.contact-text textarea {
+    margin-right: 24px;
+    flex: 1 1 90%;
+}
+
+.contact-text button {
+    flex: 1 1 10%;
+}
+
+/*========================== ПАРТНЁРЫ =========================*/
+
+.partners {
+    margin: 40px 0;
+}
+
+.partners-container {
+    text-align: center;
+}
+
+.partners-container h3 {
+    color: #37415B40 !important;
+    margin-bottom: 20px;
+
+}
