@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-input, textarea, button {
+input, textarea, button, .send-button {
     width: 100%;
     background-color: white;
     border: none;
@@ -64,6 +64,12 @@ textarea {
     position: relative;
     top: -114px;
     visibility: hidden;
+}
+
+@media screen and (max-width: 780px) {
+    .anchor {
+        top: -58px;
+    }
 }
 
 /***********************************/
@@ -91,6 +97,14 @@ textarea {
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 780px) {
+    .header {
+        background-image: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
 .header-top {
     position: fixed;
     width: 100%;
@@ -103,6 +117,12 @@ textarea {
 
 .header-bg {
     background-color: white;
+}
+
+@media screen and (max-width: 780px) {
+    .header-bg {
+        background-color: transparent;
+    }
 }
 
 .header-top-wrapper {
@@ -148,6 +168,7 @@ textarea {
     color: #0a58ca;
 }
 
+
 .header-about {
     display: flex;
     align-items: stretch;
@@ -161,6 +182,10 @@ textarea {
     color: white;
     padding: 60px 40px;
     width: 70%;
+}
+
+.header-about-text p {
+    margin-bottom: 16px !important;
 }
 
 .header-about-img {
@@ -178,6 +203,101 @@ textarea {
 
     .header-about-img {
         width: 40%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .header-about {
+        flex-direction: column-reverse;
+        border-radius: 0;
+        margin-left: -12px;
+        margin-right: -12px;
+
+        /*position: absolute;*/
+        /*top: 0;*/
+    }
+
+    .header-about-text {
+        padding: 32px 12px;
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .header-about-img {
+        width: 100%;
+        height: 300px;
+
+        /*background-size: 120%;*/
+        /*background-position: right 10% top;*/
+    }
+
+    .menu-place {
+        height: 0 !important;
+    }
+
+
+    .header {
+        position: relative;
+    }
+
+
+    .header-top {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        padding: 20px 0 0 0;
+    }
+
+    .header-logo {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .header-logo img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+}
+
+.header-top-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .header-top-mobile {
+        display: block;
+        padding: 16px 0;
+        background-color: white;
+    }
+
+    .header-menu-mobile {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header-menu-mobile .header-menu-link {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: #37405B;
+    }
+
+    .mobile-fixed{
+        position: fixed;
+        width: 100%;
+        top:0;
+        left:0;
+        z-index:3;
+    }
+    .pt44{
+        padding-top:56px;
     }
 }
 
@@ -663,8 +783,11 @@ textarea {
     flex: 1 1 90%;
 }
 
-.contact-text button {
+.contact-text .send-button {
     flex: 1 1 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*========================== ПАРТНЁРЫ =========================*/
@@ -681,4 +804,69 @@ textarea {
     color: #37415B40 !important;
     margin-bottom: 20px;
 
+}
+
+.partners-swiper-slide p {
+    color: #37405B;
+    font-weight: 700;
+    margin-top: 16px !important;
+}
+
+.swiper-nav-btn {
+    color: #00000040 !important;
+    transition: color 0.3s ease;
+}
+
+.swiper-nav-btn:hover {
+    color: #00000070 !important;
+}
+
+@media screen and (max-width: 780px) {
+    .partners-swiper-slide img {
+        width: 70%;
+    }
+}
+
+
+/*=============================== ФУТЕР ===========================*/
+
+footer {
+    background-color: #37405B;
+    color: white;
+    padding: 40px 0;
+}
+
+.our-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-logo a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-decoration: none;
+    color: white;
+}
+
+.contact-logo p {
+    font-size: 0.7em;
+}
+
+.contact-info p {
+    font-weight: 700;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 780px) {
+    .contact-logo img {
+        width: 50px;
+    }
+
+    .contact-info p {
+        font-size: 0.8em;
+    }
 }
